@@ -33,7 +33,7 @@ export default function FirstScreen() {
         keyExtractor={(item) => item.id}
         initialNumToRender={1}
       />
-      <Pressable onPress={secondScreen} style={{backgroundColor: '#00BDD6', marginHorizontal: 50,textAlign:'center',justifyContent:'center', marginVertical: 70,minHeight:50,width:300}}> GET START </Pressable>
+      <Pressable onPress={secondScreen} style={{backgroundColor: '#00BDD6',color: "white", marginHorizontal: 50,textAlign:'center',justifyContent:'center', marginVertical: 70,minHeight:50,width:300}}> GET START </Pressable>
     </View>
     
   );

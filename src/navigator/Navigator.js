@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FirstScreen from "../Screen/FirstScreen";
 import SecondScreen from "../Screen/SecondScreen";
 import ThirdScreen from "../Screen/ThirdScreen";
+import FourthScreen from "../Screen/FourthScreen";
 import { HeaderBackButton } from "@react-navigation/elements";
 import { TouchableOpacity } from "react-native-web";
 import { AntDesign } from '@expo/vector-icons';
@@ -42,6 +43,30 @@ export default function Navigator() {
           component={ThirdScreen}
           options={({ navigation }) => ({
             headerTitle: 'Drinks',
+            headerTitleStyle: {
+                fontSize: 25,
+                fontWeight: 'bold',
+            },
+
+            headerLeft: () => (
+              <HeaderBackButton
+                onPress={() => navigation.goBack()}
+              />
+            ),
+            headerRight: () => (
+                <TouchableOpacity style={{ marginHorizontal: 40 }}>
+                  <AntDesign name="search1" size={20} color="green" />
+                </TouchableOpacity>
+            )
+          })
+        }
+          
+        />
+                        <Stack.Screen
+          name="FourthScreen"
+          component={FourthScreen}
+          options={({ navigation }) => ({
+            headerTitle: 'Your Order',
             headerTitleStyle: {
                 fontSize: 25,
                 fontWeight: 'bold',
