@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, FlatList, Image,Pressable } from "react-native-web";
-
+import { useNavigation } from "@react-navigation/native";
 export default function FirstScreen() {
-  
+  const navigation = useNavigation();
+  const secondScreen = () => {
+    navigation.navigate('SecondScreen');
+  }
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export default function FirstScreen() {
         keyExtractor={(item) => item.id}
         initialNumToRender={1}
       />
-      <Pressable style={{backgroundColor: '#00BDD6', marginHorizontal: 50,textAlign:'center',justifyContent:'center', marginVertical: 70,minHeight:50,width:300}}> GET START </Pressable>
+      <Pressable onPress={secondScreen} style={{backgroundColor: '#00BDD6', marginHorizontal: 50,textAlign:'center',justifyContent:'center', marginVertical: 70,minHeight:50,width:300}}> GET START </Pressable>
     </View>
     
   );
